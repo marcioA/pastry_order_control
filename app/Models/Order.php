@@ -6,18 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Customer extends Model
+class Order extends Model
 {
     use SoftDeletes;
-    protected $table = 'customers';
+    protected $table = 'store_orders';
     protected $fillable = [
-        'name',
-        'email',
-        'phone',
-        'birthday',
-        'address',
-        'complement',
-        'district',
-        'zipcode',
+        'customer_id',
+        'product_id',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'products->id');
+    }
 }

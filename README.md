@@ -1,4 +1,43 @@
-# Lumen PHP Framework
+# About project
+
+## This project This project aims to implement a simple CRUD and solve the following tests:
+
+- There must not be two clients with the same email.
+- The product must have a photo.
+- The data must be validated.
+- The system must contain a set of predefined product types.
+- The order must include N products.
+- The client can have N orders.
+- After order creation, the system must send an email to the client containing the details of their order.
+
+# How to run this project in your local
+
+## Getting Started
+
+1. Clone the project using `git clone` and the project link.
+
+2. Run `npm install` to install all dependencies.
+
+3. Execute the command `./vendor/sail up -d` to start the system. The `-d` flag is used to detach the terminal.
+    - If you want to shut down the system, use `./vendor/sail down`.
+    - Note: Before executing this command, make sure you have Docker installed and running. You can download Docker from [here](https://docker.com).
+
+4. Run the command `docker exec pastry_order_control_api.test-1 php artisan migrate:fresh`.
+
+Great! Now everything is up and running. You can send requests to create, update, or delete (with soft delete) the desired items.
+
+## Areas for Improvement
+
+- [ ] Add validation for mandatory field completion.
+- [ ] Implement a queue system for handling orders.
+- [ ] Incorporate search functionality with filters.
+- [ ] Integrate Elasticsearch or a similar tool for advanced search capabilities.
+- [ ] Implement user authentication and authorization for secure queries.
+- [ ] Create a helper to handle errors and provide better responses to the frontend.
+- [ ] Alter product_id on store_orders to jsonb and deal with foreign key
+
+
+# About Framework Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)

@@ -16,3 +16,15 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'customers'], function () use ($router) {
+    require __DIR__.'/customerRoute.php';
+});
+
+$router->group(['prefix' => 'products'], function () use ($router) {
+    require __DIR__.'/productRoute.php';
+});
+
+$router->group(['prefix' => 'orders'], function () use ($router) {
+    require __DIR__.'/orderRoute.php';
+});
